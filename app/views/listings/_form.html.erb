@@ -1,0 +1,47 @@
+<%= form_with model: @listing do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% @listing.errors.full_messages_for(:title).each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :body, size: "70x5"%>
+    <%= form.text_area :body %>
+    <%= @listing.errors.full_messages_for(:body).each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+    <%= @listing.errors.full_messages_for(:body).each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :game %>
+    <%= form.text_area :game %>
+    <%= @listing.errors.full_messages_for(:body).each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :condition %>
+    <%= form.text_area :condition %>
+    <%= @listing.errors.full_messages_for(:body).each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :pieces_missing %>
+    <%= form.check_box :pieces_missing %>
+    <%= @listing.errors.full_messages_for(:body).each do |message| %>
+      <%= message %>
+    <% end %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
